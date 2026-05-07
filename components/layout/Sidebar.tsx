@@ -15,7 +15,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-[240px] h-screen sticky top-0 bg-midnight-800 border-r border-warm-400/10 flex flex-col">
+    <aside className="w-full h-screen sticky top-0 flex flex-col">
       {/* Logo */}
       <div className="p-6 border-b border-warm-400/10">
         <Link href="/dashboard" className="font-serif text-2xl gradient-text-amber">

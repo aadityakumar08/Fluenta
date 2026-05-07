@@ -20,12 +20,12 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-midnight-900 flex">
       {/* Desktop Sidebar */}
-      <div className="hidden md:block">
+      <div className="hidden md:block w-[240px] shrink-0 border-r border-warm-400/10 bg-midnight-800">
         <Sidebar />
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 min-h-screen pb-20 md:pb-0">
+      <main className="flex-1 min-w-0 min-h-screen pb-20 md:pb-0">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-6">
           {children}
         </div>
