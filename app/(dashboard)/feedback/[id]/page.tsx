@@ -133,8 +133,8 @@ export default function FeedbackPage() {
       </motion.div>
 
       {/* Scores */}
-      <div className="glass-card rounded-2xl p-8">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+      <div className="glass-card rounded-2xl p-6 md:p-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
           <ScoreRing value={feedback.fluencyScore} max={100} label="Fluency" delay={0.1}/>
           <ScoreRing value={feedback.confidenceScore} max={100} label="Confidence" delay={0.2}/>
           <ScoreRing value={feedback.grammarScore} max={100} label="Grammar" delay={0.3}/>
