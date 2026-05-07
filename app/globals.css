@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   FLUENTA DESIGN SYSTEM — Tailwind v4 Theme Tokens
+   ═══════════════════════════════════════════════════ */
+
+@theme inline {
+  /* Midnight palette */
+  --color-midnight-900: #0A0908;
+  --color-midnight-800: #141210;
+  --color-midnight-700: #1E1A17;
+  --color-midnight-600: #2A2520;
+  --color-midnight-500: #3A342D;
+
+  /* Amber palette */
+  --color-amber-500: #D4A24C;
+  --color-amber-400: #E8B86D;
+  --color-amber-300: #F2CC8A;
+  --color-amber-200: #F8E4BB;
+  --color-amber-100: #FDF5E6;
+
+  /* Warm neutrals */
+  --color-warm-100: #F0EBE3;
+  --color-warm-200: #C8BFB5;
+  --color-warm-300: #8A7F74;
+  --color-warm-400: #5C544B;
+
+  /* Semantic */
+  --color-success: #4ADE80;
+  --color-error: #F87171;
+  --color-info: #60A5FA;
+
+  /* Background / Foreground */
+  --color-background: #0A0908;
+  --color-foreground: #F0EBE3;
+
+  /* Fonts */
+  --font-serif: var(--font-instrument-serif), "Georgia", serif;
+  --font-sans: var(--font-dm-sans), "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Consolas", monospace;
+
+  /* Custom animations */
+  --animate-waveform: waveform 1.5s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+  --animate-score-ring: scoreRing 1s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-breathe: breathe 3s ease-in-out infinite;
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-slide-up: slideUp 0.6s ease-out forwards;
+  --animate-scale-in: scaleIn 0.4s ease-out forwards;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════
+   ROOT & BODY
+   ═══════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-midnight-900);
+  color: var(--color-warm-100);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════
+   GRAIN TEXTURE OVERLAY
+   ═══════════════════════════════════════════════════ */
+
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ═══════════════════════════════════════════════════
+   WAVEFORM ANIMATION
+   ═══════════════════════════════════════════════════ */
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+.waveform-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 9999px;
+  transform-origin: center;
+  animation: waveform 1.5s ease-in-out infinite;
+}
+
+/* Generate staggered delays for 30 bars */
+.waveform-bar:nth-child(1) { animation-delay: 0s; }
+.waveform-bar:nth-child(2) { animation-delay: 0.05s; }
+.waveform-bar:nth-child(3) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(4) { animation-delay: 0.15s; }
+.waveform-bar:nth-child(5) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(6) { animation-delay: 0.25s; }
+.waveform-bar:nth-child(7) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(8) { animation-delay: 0.35s; }
+.waveform-bar:nth-child(9) { animation-delay: 0.4s; }
+.waveform-bar:nth-child(10) { animation-delay: 0.45s; }
+.waveform-bar:nth-child(11) { animation-delay: 0.5s; }
+.waveform-bar:nth-child(12) { animation-delay: 0.55s; }
+.waveform-bar:nth-child(13) { animation-delay: 0.6s; }
+.waveform-bar:nth-child(14) { animation-delay: 0.65s; }
+.waveform-bar:nth-child(15) { animation-delay: 0.7s; }
+.waveform-bar:nth-child(16) { animation-delay: 0.65s; }
+.waveform-bar:nth-child(17) { animation-delay: 0.6s; }
+.waveform-bar:nth-child(18) { animation-delay: 0.55s; }
+.waveform-bar:nth-child(19) { animation-delay: 0.5s; }
+.waveform-bar:nth-child(20) { animation-delay: 0.45s; }
+.waveform-bar:nth-child(21) { animation-delay: 0.4s; }
+.waveform-bar:nth-child(22) { animation-delay: 0.35s; }
+.waveform-bar:nth-child(23) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(24) { animation-delay: 0.25s; }
+.waveform-bar:nth-child(25) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(26) { animation-delay: 0.15s; }
+.waveform-bar:nth-child(27) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(28) { animation-delay: 0.05s; }
+.waveform-bar:nth-child(29) { animation-delay: 0s; }
+.waveform-bar:nth-child(30) { animation-delay: 0.05s; }
+
+/* ═══════════════════════════════════════════════════
+   PULSE GLOW ANIMATION (CTA buttons)
+   ═══════════════════════════════════════════════════ */
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 184, 109, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(232, 184, 109, 0.5), 0 0 80px rgba(232, 184, 109, 0.15); }
+}
+
+/* ═══════════════════════════════════════════════════
+   SCORE RING ANIMATION
+   ═══════════════════════════════════════════════════ */
+
+@keyframes scoreRing {
+  from { stroke-dashoffset: var(--ring-circumference, 283); }
+  to { stroke-dashoffset: var(--ring-target, 0); }
+}
+
+/* ═══════════════════════════════════════════════════
+   FLOATING PARTICLES (onboarding bg)
+   ═══════════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+  25% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+  50% { transform: translateY(-10px) translateX(-5px); opacity: 0.4; }
+  75% { transform: translateY(-30px) translateX(15px); opacity: 0.5; }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-amber-400);
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════
+   BREATHING ANIMATION (mic button, avatars)
+   ═══════════════════════════════════════════════════ */
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════
+   GENERAL UTILITY ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════════════
+   CUSTOM SCROLLBAR
+   ═══════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-midnight-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-midnight-500);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-300);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-midnight-500) var(--color-midnight-800);
+}
+
+/* ═══════════════════════════════════════════════════
+   HORIZONTAL SCROLL CONTAINER
+   ═══════════════════════════════════════════════════ */
+
+.horizontal-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll > * {
+  scroll-snap-align: start;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   AMBIENT GLOW EFFECTS
+   ═══════════════════════════════════════════════════ */
+
+.amber-glow {
+  box-shadow: 0 0 30px rgba(232, 184, 109, 0.15),
+              0 0 60px rgba(232, 184, 109, 0.05);
+}
+
+.amber-glow-strong {
+  box-shadow: 0 0 40px rgba(232, 184, 109, 0.3),
+              0 0 80px rgba(232, 184, 109, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════
+   GRADIENT TEXT
+   ═══════════════════════════════════════════════════ */
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, var(--color-amber-300), var(--color-amber-400), var(--color-amber-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════
+   GLASS CARD
+   ═══════════════════════════════════════════════════ */
+
+.glass-card {
+  background: rgba(30, 26, 23, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(232, 184, 109, 0.08);
+}
+
+.glass-card-hover:hover {
+  background: rgba(42, 37, 32, 0.7);
+  border-color: rgba(232, 184, 109, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
